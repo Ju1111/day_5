@@ -23,6 +23,19 @@ def ask(prompt)
   gets.chomp
 end
 
+def create_new
+  contact = {}
+
+  puts
+  puts "Enter contact info:"
+
+  contact[:name ] = ask("Name? ")
+  contact[:phone] = ask("Phone? ")
+  contact[:email] = ask("Email? ")
+
+  contact
+end
+
 index(contacts)
 
 puts
@@ -43,13 +56,8 @@ loop do
   break if response == "q"
 
   if response == "n"
-    contact = {}
 
-    puts "Enter contact info:"
-
-    contact[:name]  = ask("Name? ")
-    contact[:phone] = ask("Phone? ")
-    contact[:email] = ask("Email? ")
+    contact = create_new
 
     contacts << contact
 
@@ -59,17 +67,16 @@ loop do
 
     show(contact)
     puts
- else
-   id = response.to_i
 
-   contact = contacts[id - 1]
+  else
+    id = response.to_i
 
-   puts
-   show(contact)
-   puts
+    contact = contacts[id - 1]
 
+    puts
+    show(contact)
+    puts
   end
-
 end
 
 puts
