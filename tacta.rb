@@ -33,3 +33,17 @@ contact = contacts[id - 1]
 
 puts
 show(contact)
+
+loop do
+  index(contacts)
+
+  puts
+  response = ask("Who would you like to see? ")
+
+  id = response.to_i
+  contact = contacts[id - 1]
+
+  puts
+  show(contact)
+  puts
+end
