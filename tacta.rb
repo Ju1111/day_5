@@ -22,3 +22,15 @@ puts
 puts contact[:name].to_s
 puts "phone: #{contact[:phone]}"
 puts "email: #{contact[:email]}"
+
+def index(contacts)
+  contacts.each_with_index do |contact, index|
+    puts "#{index + 1}) #{contact[:name]}"
+  end
+end
+
+def show(contact)
+  puts contact[:name].to_s
+  puts "phone: #{contact[:phone]}"
+  puts "email: #{contact[:email]}"
+end
